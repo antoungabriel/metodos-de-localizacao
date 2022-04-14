@@ -95,6 +95,39 @@ def main():
         lidar_sen = world.spawn_actor(lidar_bp,lidar_transform,attach_to=vehicle)
         lidar_sen.listen(lambda point_cloud: point_cloud.save_to_disk(SIMULATION_NAME + '/lidar_output/%.6d.ply' % point_cloud.frame))
 
+        # # Configura GNSS 1 - No Noise
+        # gnss_bp = world.get_blueprint_library().find('sensor.other.gnss')
+        # gnss_location = carla.Location(0,0,0)
+        # gnss_rotation = carla.Rotation(0,0,0)
+        # gnss_transform = carla.Transform(gnss_location,gnss_rotation)
+        # gnss_bp.set_attribute("sensor_tick",str(3.0))
+        # ego_gnss = world.spawn_actor(gnss_bp,gnss_transform,attach_to=ego_vehicle, attachment_type=carla.AttachmentType.Rigid)
+        # def gnss_callback(gnss):
+        #     print("GNSS measure:\n"+str(gnss)+'\n')
+        # ego_gnss.listen(lambda gnss: gnss_callback(gnss))
+
+        # # Configura GNSS 2 - Random Noise
+        # gnss_bp = world.get_blueprint_library().find('sensor.other.gnss')
+        # gnss_location = carla.Location(0,0,0)
+        # gnss_rotation = carla.Rotation(0,0,0)
+        # gnss_transform = carla.Transform(gnss_location,gnss_rotation)
+        # gnss_bp.set_attribute("sensor_tick",str(3.0))
+        # ego_gnss = world.spawn_actor(gnss_bp,gnss_transform,attach_to=ego_vehicle, attachment_type=carla.AttachmentType.Rigid)
+        # def gnss_callback(gnss):
+        #     print("GNSS measure:\n"+str(gnss)+'\n')
+        # ego_gnss.listen(lambda gnss: gnss_callback(gnss))
+
+        # # Configura GNSS 3 - Realistic Noise
+        # gnss_bp = world.get_blueprint_library().find('sensor.other.gnss')
+        # gnss_location = carla.Location(0,0,0)
+        # gnss_rotation = carla.Rotation(0,0,0)
+        # gnss_transform = carla.Transform(gnss_location,gnss_rotation)
+        # gnss_bp.set_attribute("sensor_tick",str(3.0))
+        # ego_gnss = world.spawn_actor(gnss_bp,gnss_transform,attach_to=ego_vehicle, attachment_type=carla.AttachmentType.Rigid)
+        # def gnss_callback(gnss):
+        #     print("GNSS measure:\n"+str(gnss)+'\n')
+        # ego_gnss.listen(lambda gnss: gnss_callback(gnss))
+
         start_record = time.time()
         print("Inicio da coleta : ")
         frame_atual = 0

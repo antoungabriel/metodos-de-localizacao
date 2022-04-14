@@ -1,18 +1,5 @@
 #!/usr/bin/env python
 
-# Forked from carla example
-#  Changed to extract lidar data
-# 
-# ref:  https://carla.readthedocs.io/en/0.9.13/tuto_G_retrieve_data/
-# 
-# 
-# Original copyright:
-# Copyright (c) 2019 Computer Vision Center (CVC) at the Universitat Autonoma de
-# Barcelona (UAB).
-#
-# This work is licensed under the terms of the MIT license.
-# For a copy, see <https://opensource.org/licenses/MIT>.
-
 import glob
 import os
 import sys
@@ -81,8 +68,6 @@ def main():
         # Let's put the vehicle to drive around.
         vehicle.set_autopilot(True)
 
-        # # Let's add now a "depth" camera attached to the vehicle. Note that the
-        # # transform we give here is now relative to the vehicle.
         # camera_bp = blueprint_library.find('sensor.camera.depth')
         # camera_transform = carla.Transform(carla.Location(x=1.5, z=2.4))
         # camera = world.spawn_actor(camera_bp, camera_transform, attach_to=vehicle)
